@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" />
+    <meta name="format-detection" content="telephone=no">
+    <title>Blink</title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova-mocks.min.js"></script>
+    <script src="lib/pouchDB/pouchdb.min.js"></script>
+    <script src="lib/pouchDB/pouchdb.find.js"></script>
+    
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="app/app.modules.js"></script>
+    <script src="app/app.config.js"></script>
+    <!-- services -->
+    <script src="app/services/watcherServices.js"></script>
+    <script src="app/services/pouchDBService.js"></script>
+    <script src="app/services/httpService.js"></script>
+    <script src="app/services/productService.js"></script>
+    <script src="app/services/productHistoryService.js"></script>
+    <script src="app/services/popupService.js"></script>
+    
+    <!--   <script src="app/common/services/factory.barcodeDbService.js"></script> -->
+    <!-- controllers -->
+    <script src="app/componants/core/controller.core.js"></script>
+    <script src="app/componants/core/controller.scan.js"></script>
+    <script src="app/componants/products/controller.scannerdetail.js"></script>
+    <script src="app/componants/settings/controller.settings.js"></script>
+    <script src="app/componants/history/controller.barcodeHistory.js"></script>
+    <script src="app/componants/favorite/controller.barcodeFavorite.js"></script>
+    <!--    <script src="http://example.gajotres.net/include/loadsh/lodash.min.js"></script>-->
+    <script src='lib/angular-google-maps/dist/angular-google-maps.min.js'></script>
+    <script src='lib/lodash/lodash.min.js'></script>
+</head>
+
+<body ng-app="blink" ng-controller="coreController">
+    <style>
+    .bar-header {
+        background-color: #444;
+    }
+    </style>
+    <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<ion-view title="Scanned Items">
+    <!-- header toggle button -->
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon toggle-left" menu-toggle="left"></button>
+    </ion-nav-buttons>
+    <!-- header bar -->
+    <ion-header-bar class="bar-dark"></ion-header-bar>
+
+    <!-- products view page content -->
+    <ion-content>
+
+        <!-- product image -->
+        <div class="item item-image barcode-detail-img-wrap">
+            <img ng-show="scan_item.imageurl" class="barcode-detail-img" src="{{scan_item.imageurl}}"></div>
+
+        <!-- product name -->
+        <div class="row header detail">
+            <div class="col col-80">{{scan_item.productname}}</div>
+        </div>
+
+        <!-- price detail -->
+        <div class="row footer item-detail">
+            <div class="col">
+                <span style="font-size:smaller">Price</span>
+                <br/><span>{{scan_item.sellingInfo.currentPrice.currency}}&nbsp; {{scan_item.sellingInfo.currentPrice.price}}</span>
+            </div>
+            <!-- share button -->
+            <div class="col">
+                <a class="share" ng-click="shareAnywhere(scan_item.productname,scan_item.productname,scan_item.imageurl,scan_item.description)">
+                    <i class="icon ion-share" style="font-size: xx-large;"></i>
+                    <span style="font-size:smaller"></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- product card view -->
+        <div class="card-list">
+            <!-- horizontally scroller -->
+            <ion-scroll direction="x" class="wide-as-needed">
+                <!-- card list -->
+                <div class="card barcode-detail" style="display:inline-block;width: 85%;" ng-repeat="product in products" ng-click="showBarcodeItemDetail(product)">
+                    <div class="block2">
+                        <!-- product image -->
+                        <div class="inner image"> <img class="item-img" src="{{product.imageurl}}"></div>
+                        <!-- product detail -->
+                        <div class="inner name">
+                            <h5>{{product.productname}}</h5>
+                            <p class="small-font" style="color: #8A8A8A;">{{product._id}}</p>
+                            <p class="small-font"><span style="color: #8A8A8A;">Price</span>&nbsp;&nbsp;{{product.sellingInfo.currentPrice.currency}}&nbsp;{{product.sellingInfo.currentPrice.price}}</p>
+                            <p>{{source[product.dbType]['name']}}</p>
+                        </div>
+                    </div>
+                </div>
+                <!--
+      <div class="card" style="display:inline-block;    width: 85%;">
+
+<div class="block2"><div class="inner image">    <img class="item-img" src="https://drscdn.500px.org/photo/128019517/m%3D2048/f2bd2de0c6f892efc937fed333b0abb3">
+</div> <div class="inner name"><h5>Kingston SSD 240GB 240G SSDnow V300 Solid State Drive New</h5><p class="small-font" style="color: #8A8A8A;">1-234-5677-7896</p><p class="small-font"><span  style="color: #8A8A8A;">Price</span>&nbsp;$23</p></div></div>
+
+</div>
+      
+-->
+                <!--      
+         <div class="card" style="display:inline-block;    width: 85%;">
+
+<div class="block2"><div class="inner image">    <img class="item-img" src="https://drscdn.500px.org/photo/128019517/m%3D2048/f2bd2de0c6f892efc937fed333b0abb3">
+</div> <div class="inner name"><h5>Kingston SSD 240GB 240G SSDnow V300 Solid State Drive New</h5><p class="small-font" style="color: #8A8A8A;">1-234-5677-7896</p><p class="small-font"><span  style="color: #8A8A8A;">Price</span>&nbsp;$23</p></div></div>
+
+</div>
+-->
+            </ion-scroll>
+        </div>
+    </ion-content>
+</ion-view>
